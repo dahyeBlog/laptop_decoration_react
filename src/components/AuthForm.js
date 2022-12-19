@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import styled from "styled-components";
+import styled from "styled-components";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -43,8 +43,8 @@ const AuthForm = () => {
   };
 
   return (
-    <AuthForm>
-      <form className="authForm" onSubmit={onSubmit}>
+    <FormContainer>
+      <form onSubmit={onSubmit}>
         <input
           type="email"
           name="email"
@@ -63,14 +63,51 @@ const AuthForm = () => {
           value={password}
           onChange={onChange}
         />
-        <input type="submit" value={newAccount ? "회원가입" : "로그인"} />
+        <FormInput type="submit" value={newAccount ? "회원가입" : "로그인"} />
       </form>
 
-      <span onClick={toggleAccount}>
+      <FormSignToggle onClick={toggleAccount}>
         {newAccount ? "로그인하기" : "회원가입하러가기"}
-      </span>
-    </AuthForm>
+      </FormSignToggle>
+    </FormContainer>
   );
 };
+
+const FormContainer = styled.div`
+  width: 350px;
+  height: 180px;
+  margin: 0 auto;
+  margin-top: 10px;
+  form {
+    input {
+      width: 100%;
+      border: 1px solid #eee;
+      box-sizing: border-box;
+      padding: 0.5rem;
+      margin-bottom: 5px;
+    }
+  }
+`;
+
+const FormInput = styled.input`
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: #c45964;
+  color: #fff;
+  &:hover {
+    background-color: #ea939b;
+    color: #fff;
+  }
+`;
+
+const FormSignToggle = styled.span`
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+`;
 
 export default AuthForm;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styled from "styled-components";
 import AppRouter from "./Router";
 import { auth } from "../firebase";
 
@@ -17,7 +18,19 @@ function App() {
     });
   }, []);
 
-  return <>{init ? <AppRouter isLoggedIn={isLoggedIn} /> : "로딩중..."}</>;
+  return (
+    <>
+      {init ? (
+        <Container>
+          <AppRouter isLoggedIn={isLoggedIn} />{" "}
+        </Container>
+      ) : (
+        "로딩중..."
+      )}
+    </>
+  );
 }
+const Container = styled.div`
+`;
 
 export default App;

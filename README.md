@@ -16,10 +16,12 @@
 ## 사용한 도구 및 라이브러리
 - react, firebase
 - react-router-dom@6.3.0
-- uuid
 - npm i styled-components
+- npm i react-draggable
 
 ## 강의를 통해 배운 것
+- 캔버스에 원하는 이미지를 끌어서 놓는 것을 구현해보았다. 
+
 
 ## 학습하면서 어려웠던 점
 

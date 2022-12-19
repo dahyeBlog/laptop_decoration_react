@@ -2,7 +2,7 @@ import React from "react";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 
-const Profile = () => {
+const MyLaptop = () => {
   const navigate = useNavigate()
 
   const onLogOutClick = () => {
@@ -17,4 +17,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default MyLaptop;

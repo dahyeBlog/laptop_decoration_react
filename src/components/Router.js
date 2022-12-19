@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navigation from "../routes/Navigation";
 import Home from "../routes/Home";
 import Auth from "../routes/Auth";
-import Profile from "../routes/Profile";
+import Profile from "../routes/MyLaptop";
 const AppRouter = ({ isLoggedIn }) => {
   return (
     <Router>
@@ -12,7 +12,7 @@ const AppRouter = ({ isLoggedIn }) => {
         {isLoggedIn ? (
           <>
             <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/MyLaptop" element={<Profile />} />
           </>
         ) : (
           <Route path="/" element={<Auth />} />
