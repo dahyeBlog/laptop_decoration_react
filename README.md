@@ -67,5 +67,5 @@ src
 ```
 - 해결 방법음 오류에 써있는 것과 같이 Firebase console -> Auth section -> Settings tab -> 승인된 도메인 목록에 도메인을(dahyeBlog.github.io) 추가해주면 된다. 
 
-- 
+- ![스크린샷 2022-12-20 오후 10 25 08](https://user-images.githubusercontent.com/85933158/208677731-851fe730-d02e-4276-9a72-a4f81c627e6d.png)
 
