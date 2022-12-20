@@ -31,7 +31,7 @@ src
 - npm i styled-components
 
 ## 강의를 통해 배운 것
-- 사진을 업로드 할 수 있는 함수를 배웠고, 이를 firebase의 storage에 저장하는 기능을 배웠다. 
+- firebase의 storage에 사진을 업로드 하는 기능
 - 사진 업로드 코드 
 ```bash
   //이미지 업로드 하기
