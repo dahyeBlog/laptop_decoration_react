@@ -59,3 +59,13 @@ src
   }, []);
 ```
 
+## 해결한 오류
+- 깃헙 page에 배포 했을 때 다음과 같은 오류가 발생했다. 
+
+```bash
+  iframe.js:299 Info: The current domain is not authorized for OAuth operations. This will prevent signInWithPopup, signInWithRedirect, linkWithPopup and linkWithRedirect from working. Add your domain (dahyeblog.github.io) to the OAuth redirect domains list in the Firebase console -> Auth section -> Sign in method tab.
+```
+- 해결 방법음 오류에 써있는 것과 같이 Firebase console -> Auth section -> Settings tab -> 승인된 도메인 목록에 도메인을(dahyeBlog.github.io) 추가해주면 된다. 
+
+- 
+
