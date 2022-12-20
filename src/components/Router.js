@@ -8,7 +8,7 @@ const AppRouter = ({ isLoggedIn, userObj }) => {
   return (
     <Router>
       {isLoggedIn ? <Navigation userObj={userObj} /> : ""}
-      <Routes>
+      <Routes basename={process.env.PUBLIC_URL}>
         {isLoggedIn ? (
           <>
             <Route path="/" element={<Home userObj={userObj} />} />
