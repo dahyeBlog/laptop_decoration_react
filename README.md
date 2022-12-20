@@ -9,7 +9,19 @@
 
 ## 폴더 상세설명
 ```bash 
-
+src
+ ┣ components
+ ┃ ┣ App.js
+ ┃ ┣ AuthForm.js
+ ┃ ┗ Router.js
+ ┣ routes
+ ┃ ┣ Auth.js
+ ┃ ┣ Home.js
+ ┃ ┣ MyProfile.js
+ ┃ ┗ Navigation.js
+ ┣ firebase.js
+ ┣ index.css
+ ┗ index.js
 ```
 
 ## 사용한 도구 및 라이브러리
@@ -46,7 +58,4 @@
     });
   }, []);
 ```
-
-## 학습하면서 어려웠던 점
-- 
 
