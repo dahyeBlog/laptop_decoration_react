@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { ref, listAll, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "../firebase";
 import { v4 } from "uuid";
-
 const Home = () => {
   const [imageUrls, setImageUrls] = useState([]);
   const [imageUpload, setImageUpload] = useState(null);
@@ -50,8 +49,8 @@ const Home = () => {
       </PhotoInputWrapper>
 
       <PhotoImageWrapper>
-        {imageUrls.map((url, index) => {
-          return <img src={url} key={index} />;
+        {imageUrls.map((url) => {
+          return <img src={url} key={url} />;
         })}
       </PhotoImageWrapper>
     </PhotoUploadContainer>
