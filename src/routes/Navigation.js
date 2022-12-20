@@ -12,7 +12,7 @@ const Navigation = () => {
           </Link>
         </li>
         <li>
-          <Link to="/MyLaptop">My Laptop</Link>
+          <Link to="/MyProfile">My Profile</Link>
         </li>
       </ul>
     </NavContainer>

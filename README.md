@@ -1,12 +1,11 @@
-# Laptop 꾸미기 프로젝트
--  Laptop 앞부분을 스티커로 꾸며 꾸며진 laptop 사진을 저장할 수 있는 사이트를 만들었다.
+# Photo upload 프로젝트
+-  Photo를 업로드 해서 관리할 수 있는 간단한 사이트를 제작함
 
 ## 데모사이트
 
 ## 구현한 내용
 - 회원가입, 로그인
-- 랩탑 앞부분을 주어진 스티커로 꾸미기 
-- 현재 선택된 랩탑이미지를 캡쳐해 저장하기
+- 메인 페이지는 사진을 업로드 할 수 있음
 
 ## 폴더 상세설명
 ```bash 
@@ -17,15 +16,40 @@
 - react, firebase
 - react-router-dom@6.3.0
 - npm i styled-components
-- npm i react-draggable
 
 ## 강의를 통해 배운 것
-- 캔버스에 원하는 이미지를 끌어서 놓는 것을 구현해보았다. 
+- 사진을 업로드 할 수 있는 함수를 배웠고, 이를 firebase의 storage에 저장하는 기능을 배웠다. 
+- 기억하고 싶은 사진 업로드 코드 
+```bash
+  //이미지 업로드 하기
+  const uploadFile = () => {
+    if (imageUpload == null) return; // 이미지 업로드값이 없으면, 리턴
+    const imageRef = ref(storage, `images/${imageUpload.name + v4()}`);
+    // `images === 참조값 이름(폴더이름),/뒤에 아이디 생성`
+    uploadBytes(imageRef, imageUpload).then((snapshot) => {
+      // 업로드 되자마자 뜨게 만드는것
+      getDownloadURL(snapshot.ref).then((url) => {
+        setImageUrls((prev) => [...prev, url]);
+      });
+    });
+  };
 
+  //저장한 이미지 가져오기 
+  useEffect(() => {
+    listAll(imagesListRef).then((response) => {
+      //listAll 메서드 이용해서 이미지 리스트를 불러옴.
+      response.items.forEach((item) => {
+        getDownloadURL(item).then((url) => {
+          setImageUrls((prev) => [...prev, url]);
+        });
+      });
+    });
+  }, []);
+```
 
 ## 학습하면서 어려웠던 점
-
-### 프로필 이름을 수정하고 재 렌더링 되도록 할때 발생한 오류
-
+- 사진 업로드하는 문서를 찾아서 그대로 구현했지만, 오류가 났었다. 그 이유는 v8버전으로 코드를 구현하고 있었던 것이다. 
+- 다시 문서를 찾아 입력해서 파일 업로드를 구현할 수 있었다. 
+- 느꼈던 점은 공식문서는 읽기 어렵더라도 정확히 읽는 연습이 필요하다. 
 
 ### 문제해결 방법
