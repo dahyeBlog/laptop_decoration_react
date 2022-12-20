@@ -6,9 +6,9 @@ import Auth from "../routes/Auth";
 import Profile from "../routes/MyProfile";
 const AppRouter = ({ isLoggedIn, userObj }) => {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       {isLoggedIn ? <Navigation userObj={userObj} /> : ""}
-      <Routes basename={process.env.PUBLIC_URL}>
+      <Routes>
         {isLoggedIn ? (
           <>
             <Route path="/" element={<Home userObj={userObj} />} />
