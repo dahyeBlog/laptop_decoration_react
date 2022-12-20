@@ -2,6 +2,7 @@
 -  Photo를 업로드 해서 관리할 수 있는 간단한 사이트를 제작함
 
 ## 데모사이트
+- https://dahyeblog.github.io/photo_upload_project_react/
 
 ## 구현한 내용
 - 회원가입, 로그인
